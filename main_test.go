@@ -6,28 +6,28 @@ import (
 )
 
 var (
-	store1 store = store{
+	store1 Store = Store{
 		name: "jakarta barat",
 	}
-	store2 store = store{
+	store2 Store = Store{
 		name: "jakarta timur",
 	}
-	product1 product = product{
+	product1 Product = Product{
 		name: "shampo",
 		stock: 1,
 		price: 10,
 	}
-	product2 product = product{
+	product2 Product = Product{
 		name: "sabun",
 		stock: 1,
 		price: 10,
 	}
-	gudang warehouse
+	gudang Warehouse
 )
 
 func TestAddProduct(t *testing.T){
 	expectation := product1
-	var result product
+	var result Product
 	gudang.AddProduct(store1, product1)
 	gudang.AddProduct(store2, product2)
 	for _, v := range gudang.item {
